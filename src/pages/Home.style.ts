@@ -1,6 +1,17 @@
 import { IonContent, IonFooter, IonTextarea } from "@ionic/react";
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+export const VirtuosoContainer = styled.div`
+  flex: 1;
+  height: "100%";
+`;
+
 export const Content = styled(IonContent)`
   -webkit-overflow-scrolling: auto;
 `;
@@ -15,8 +26,6 @@ export const Input = styled(IonTextarea)<{ keyboardHeight: number }>`
     `translate3d(0, -${keyboardHeight}px, 0)`};
   max-height: 300px;
   background: var(--ion-color-light);
-  /* --padding-start: 1rem;
-  --padding-end: 1rem; */
   border-radius: 1rem;
 `;
 
@@ -25,14 +34,9 @@ export const MessageContainer = styled.div`
   flex-direction: column;
   min-height: 1px;
   width: 100%;
+  padding: 1rem;
 `;
 
 export const MessageBubble = styled.div`
-  /* background: var(--ion-color-light); */
-  /* width: 90%; */
-  /* padding: 1rem; */
-  /* margin: 1rem; */
-  padding: 1rem;
-  /* height: 200px; */
   border-radius: 2rem;
 `;

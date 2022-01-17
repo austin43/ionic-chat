@@ -32,18 +32,12 @@ const client = createClient({
     cacheExchange<any>({
       resolvers: {
         Query: {
-          launchesPast: (parent, args, cache, info) => {
-            // console.log(parent.launchesPast, "launchesPast");
-            // const reversed = parent.launchesPast?.reverse();
+          launchesPast: (parent: any, args: any, cache: any, info: any) => {
             const paginationResult = simplePagination({
               offsetArgument: "offset",
               limitArgument: "limit",
             })(parent, args, cache, info);
-
-            // console.log(paginationResult);
             if (!!paginationResult?.length) {
-              const myVars = [...paginationResult].reverse();
-              // console.log("reversed", myVars);
               return [...paginationResult].reverse();
             } else {
               return parent.paginationResult;
